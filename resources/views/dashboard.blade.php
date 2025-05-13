@@ -5,11 +5,34 @@
     <!-- Welcome Section -->
     <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
         <h2 class="text-3xl font-bold text-gray-800 mb-2">Welcome Back, {{ Auth::user()->name }}!</h2>
-        <p class="text-gray-600">Manage your news and see your statistics below</p>
+        <p class="text-gray-600">
+            @if(Auth::user()->role == 'admin')
+                Manage all news, teachers, and system settings
+            @else
+                Manage your news and see your statistics
+            @endif
+        </p>
     </div>
 
     <!-- Statistics Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        @if(Auth::user()->role == 'admin')
+        <!-- Total Teachers Card (Admin Only) -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="flex items-center">
+                <div class="p-3 rounded-full bg-indigo-500 bg-opacity-20">
+                    <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </div>
+                <div class="ml-4">
+                    <h3 class="text-gray-500 text-sm">Total Teachers</h3>
+                    <span class="text-2xl font-bold text-gray-800">{{ App\Models\User::where('role', 'teacher')->count() }}</span>
+                </div>
+            </div>
+        </div>
+        @endif
+
         <!-- Total News Card -->
         <div class="bg-white rounded-lg shadow-lg p-6">
             <div class="flex items-center">
@@ -20,7 +43,13 @@
                 </div>
                 <div class="ml-4">
                     <h3 class="text-gray-500 text-sm">Total News</h3>
-                    <span class="text-2xl font-bold text-gray-800">{{ App\Models\News::count() }}</span>
+                    <span class="text-2xl font-bold text-gray-800">
+                        @if(Auth::user()->role == 'admin')
+                            {{ App\Models\News::count() }}
+                        @else
+                            {{ App\Models\News::where('user_id', Auth::id())->count() }}
+                        @endif
+                    </span>
                 </div>
             </div>
         </div>
@@ -35,23 +64,13 @@
                 </div>
                 <div class="ml-4">
                     <h3 class="text-gray-500 text-sm">Published News</h3>
-                    <span class="text-2xl font-bold text-gray-800">{{ App\Models\News::where('status', 'published')->count() }}</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Views Today -->
-        <div class="bg-white rounded-lg shadow-lg p-6">
-            <div class="flex items-center">
-                <div class="p-3 rounded-full bg-purple-500 bg-opacity-20">
-                    <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                    </svg>
-                </div>
-                <div class="ml-4">
-                    <h3 class="text-gray-500 text-sm">Views Today</h3>
-                    <span class="text-2xl font-bold text-gray-800">2.4K</span>
+                    <span class="text-2xl font-bold text-gray-800">
+                        @if(Auth::user()->role == 'admin')
+                            {{ App\Models\News::where('status', 'published')->count() }}
+                        @else
+                            {{ App\Models\News::where('user_id', Auth::id())->where('status', 'published')->count() }}
+                        @endif
+                    </span>
                 </div>
             </div>
         </div>
@@ -66,7 +85,7 @@
                 </div>
                 <div class="ml-4">
                     <h3 class="text-gray-500 text-sm">Categories</h3>
-                    <span class="text-2xl font-bold text-gray-800">100</span>
+             
                 </div>
             </div>
         </div>
@@ -82,6 +101,22 @@
                 </svg>
                 Create News
             </a>
+            
+            @if(Auth::user()->role == 'admin')
+            <a href="{{ route('news.index') }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg transition duration-200 flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+                Manage Teachers
+            </a>
+            <a href="" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-lg transition duration-200 flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                </svg>
+                Manage Categories
+            </a>
+            @endif
+            
             <a href="{{ route('news.index') }}" class="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2 rounded-lg transition duration-200 flex items-center">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
