@@ -24,6 +24,9 @@ Route::middleware('auth')->group(function () {
     Route::middleware('role:admin')->group(function () {
         Route::post('news/{news}/approve', [NewsController::class, 'approve'])->name('news.approve');
     });
+    Route::get('/settings', [AuthController::class, 'showSettings'])->name('settings');
+    Route::put('/settings/profile', [AuthController::class, 'updateProfile'])->name('settings.profile');
+    Route::put('/settings/password', [AuthController::class, 'updatePassword'])->name('settings.password');
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+
 class AuthController extends Controller
 {
     public function showLoginForm()
@@ -61,4 +62,49 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('login');
     }
+    
+    public function showSettings()
+{
+    return view('settings');
+}
+
+public function updateProfile(Request $request)
+{
+    $user = Auth::user();
+    
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|unique:users,email,'.$user->id,
+    ]);
+
+    $user->update([
+        'name' => $request->name,
+        'email' => $request->email,
+    ]);
+
+    return back()->with('success', 'Profil berhasil diperbarui');
+}
+
+public function updatePassword(Request $request)
+{
+    $user = Auth::user();
+    
+    $request->validate([
+        'current_password' => 'required',
+        'password' => 'required|confirmed|min:8',
+    ]);
+
+    if (!Hash::check($request->current_password, $user->password)) {
+        return back()->withErrors([
+            'current_password' => 'Password saat ini tidak sesuai'
+        ]);
+    }
+
+    $user->update([
+        'password' => Hash::make($request->password)
+    ]);
+
+    return back()->with('success', 'Password berhasil diperbarui');
+}
+
 }
