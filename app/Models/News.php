@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    protected $fillable = ['title', 'content', 'image', 'user_id', 'status'];
+    protected $fillable = ['title', 'content', 'image', 'user_id', 'status', 'section', 'category'];
 
     public function user()
     {
@@ -18,5 +18,3 @@ class News extends Model
         return $this->hasMany(NewsApproval::class);
     }
 }
-
-?>

@@ -30,8 +30,8 @@ class UserSeeder extends Seeder
         // Create Guru 2  
         User::create([
             'name' => 'AhmadShafwur',
-            'email' => 'ahmad@example.com', // Email diganti agar unique
-            'password' => Hash::make('password222'),
+            'email' => 'ads@example.com', // Email diganti agar unique
+            'password' => Hash::make('12345678'),
             'role' => 'guru'
         ]);
     }

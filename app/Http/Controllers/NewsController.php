@@ -33,6 +33,7 @@ class NewsController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required',
             'image' => 'nullable|image|max:2048',
+            'section' => 'required|in:latest,popular,extracurricular',
         ]);
 
         $data['user_id'] = Auth::id();
@@ -43,7 +44,7 @@ class NewsController extends Controller
         }
 
         News::create($data);
-        return redirect()->route('news.index')->with('success', 'News created successfully');
+        return redirect()->route('news.index')->with('success', 'Berita berhasil dibuat');
     }
 
     public function edit(News $news)
@@ -64,6 +65,7 @@ class NewsController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required',
             'image' => 'nullable|image|max:2048',
+            'section' => 'required|in:latest,popular,extracurricular',
         ]);
 
         if ($request->hasFile('image')) {
@@ -78,7 +80,7 @@ class NewsController extends Controller
         }
 
         $news->update($data);
-        return redirect()->route('news.index')->with('success', 'News updated successfully');
+        return redirect()->route('news.index')->with('success', 'Berita berhasil diperbarui');
     }
 
     public function destroy(News $news)
@@ -92,7 +94,7 @@ class NewsController extends Controller
         }
 
         $news->delete();
-        return redirect()->route('news.index')->with('success', 'News deleted successfully');
+        return redirect()->route('news.index')->with('success', 'Berita berhasil dihapus');
     }
 
     public function approve(Request $request, News $news)
@@ -112,6 +114,6 @@ class NewsController extends Controller
         ]);
 
         $news->update(['status' => $data['status']]);
-        return redirect()->route('news.index')->with('success', 'News approval updated');
+        return redirect()->route('news.index')->with('success', 'Status persetujuan berita diperbarui');
     }
 }
