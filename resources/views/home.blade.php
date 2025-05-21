@@ -82,10 +82,8 @@
         <span class="font-bold mr-4 whitespace-nowrap">BREAKING:</span>
         <div class="overflow-hidden">
             <div class="animate-marquee whitespace-nowrap">
-                <span class="mr-8">⚡ Indonesia's economy grows 5.1% in Q2 2023</span>
-                <span class="mr-8">⚡ New climate agreement reached at global summit</span>
-                <span class="mr-8">⚡ Tech giant announces revolutionary AI breakthrough</span>
-                <span class="mr-8">⚡ Sports team wins championship after 20-year drought</span>
+                <span class="mr-8">⚡ JURUSAN REKAYASA PERANGKAT LUNAK MENGADAKAN LIVE STREAMING UJI KOLABORASI DI YOUTUBE </span>
+                <span class="mr-8">⚡ DKV SMKN 6 JEMBER MENGADAKAN GELAR KARYA DI AULA </span>
             </div>
         </div>
     </div>
@@ -100,8 +98,8 @@
                     <span class="bg-white text-primary-700 px-3 py-1 rounded-full text-sm font-bold">TRENDING</span>
                     <span class="bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-bold">POLITICS</span>
                 </div>
-                <h1 class="text-4xl md:text-5xl font-bold leading-tight">Global Leaders Gather for Climate Summit Amid Rising Concerns</h1>
-                <p class="text-lg text-primary-100">Exclusive coverage as world leaders debate urgent climate action with new proposals on the table.</p>
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight">Sixma News hadir sebagai pusat informasi resmi yang menyajikan berita terkini, inspiratif, dan edukatif dari SMK Negeri 6 Jember.</h1>
+                <p class="text-lg text-primary-100">Melalui platform ini, kami berkomitmen untuk menjadi jendela informasi terpercaya yang merekam setiap momen penting, mengangkat kisah-kisah inspiratif dari siswa, guru, dan seluruh civitas akademika, serta menyampaikan berbagai pengetahuan yang bermanfaat bagi pembaca.
                 <div class="flex items-center space-x-4 text-sm">
                     <span class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -124,7 +122,7 @@
             </div>
             <div class="relative">
                 <div class="absolute -inset-4 bg-primary-800 rounded-lg transform rotate-3"></div>
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMAfB0svzh2tMHtJ2gy6KS8TWU9f0SX2dkdi6TdTUsLkjWvHJII5MB-SjXJBJyW6AVixOicz0NIUgB3Wcu25ryCL_TtThIWBbO07SCLKx4C1tQF68AssZajfc9L7L2PPGLZmrVqdSjrJoZ-uice5xwhv7eIJR0gALYS3edValXJcS1ThAF1_CnuCOMhN44/s960/299188759_476701244461218_6443841483236423234_n.jpg
                      alt="News Coverage" 
                      class="relative rounded-lg shadow-xl w-full h-96 object-cover">
             </div>

@@ -27,7 +27,7 @@
                 </div>
                 <div class="ml-4">
                     <h3 class="text-gray-500 text-sm">Total Teachers</h3>
-                    <span class="text-2xl font-bold text-gray-800">{{ App\Models\User::where('role', 'teacher')->count() }}</span>
+                    <span class="text-2xl font-bold text-gray-800">{{ App\Models\User::where('role', 'guru')->count() }}</span>
                 </div>
             </div>
         </div>
