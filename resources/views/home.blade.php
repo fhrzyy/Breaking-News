@@ -194,11 +194,11 @@
         <a href="" class="text-primary-700 hover:text-primary-900 font-medium">Lihat Semua →</a>
     </div>
     
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
         @forelse ($popularNews as $item)
             @if ($loop->first)
                 <!-- Featured Big Card -->
-                <div class="lg:col-span-2 bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="lg:col-span-6 bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
                     <div class="relative">
                         @if($item->image)
                             @if(Str::startsWith($item->image, ['http://', 'https://']))
@@ -230,41 +230,49 @@
             
             @else
                 <!-- Popular News List -->
-                <div class="flex bg-white rounded-lg shadow-sm hover:shadow-md transition p-4">
-                    <div class="w-24 h-24 flex-shrink-0">
+                <div class="lg:col-span-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-300 overflow-hidden">
+                    <div class="relative h-36">
                         @if($item->image)
                             @if(Str::startsWith($item->image, ['http://', 'https://']))
                                 <img src="{{ $item->image }}" alt="{{ $item->title }}" 
-                                     class="w-full h-full object-cover rounded">
+                                     class="w-full h-full object-cover">
                             @else
                                 <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" 
-                                     class="w-full h-full object-cover rounded">
+                                     class="w-full h-full object-cover">
                             @endif
                         @else
-                            <div class="w-full h-full bg-gray-200 flex items-center justify-center rounded">
+                            <div class="w-full h-full bg-gray-200 flex items-center justify-center">
                                 <span class="text-gray-500 text-xs">No Image</span>
                             </div>
                         @endif
+                        <span class="absolute top-2 left-2 text-xs font-semibold px-2 py-1 bg-primary-600 text-white rounded-full">
+                            {{ strtoupper($item->section) }}
+                        </span>
                     </div>
-                    <div class="ml-4 flex flex-col justify-between">
-                        <div>
-                            <span class="text-xs font-semibold px-2 py-1 bg-primary-100 text-primary-700 rounded-full">
-                                {{ strtoupper($item->section) }}
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800 text-base line-clamp-2 mb-2 hover:text-primary-600">
+                            <a href="{{ route('news.index', $item->slug) }}">{{ $item->title }}</a>
+                        </h4>
+                        <div class="flex items-center text-gray-500 text-xs mt-auto">
+                            <span class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                </svg>
+                                {{ $item->user->name }}
                             </span>
-                            <h4 class="font-bold text-gray-800 mt-1 hover:text-primary-600">
-                                <a href="{{ route('news.index', $item->slug) }}">{{ $item->title }}</a>
-                            </h4>
-                        </div>
-                        <div class="flex items-center text-gray-500 text-xs mt-1">
-                            <span>{{ $item->user->name }}</span>
                             <span class="mx-2">•</span>
-                            <span>{{ $item->created_at->diffForHumans() }}</span>
+                            <span class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                {{ $item->created_at->diffForHumans() }}
+                            </span>
                         </div>
                     </div>
                 </div>
             @endif
         @empty
-            <div class="col-span-4 text-center py-12 bg-white rounded-lg">
+            <div class="col-span-12 text-center py-12 bg-white rounded-lg">
                 <p class="text-gray-500 text-lg">Tidak ada berita populer saat ini.</p>
             </div>
         @endforelse
