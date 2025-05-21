@@ -29,9 +29,13 @@ Route::middleware('auth')->group(function () {
     Route::put('/settings/password', [AuthController::class, 'updatePassword'])->name('settings.password');
 });
 
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', fn() => view('about'))->name('about');
 Route::get('/faq', fn() => view('faq'))->name('faq');
+
+Route::get('/public-news', [NewsController::class, 'publicIndex'])->name('news.publicIndex');
+Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
 
 // Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 // Route::post('/register', [AuthController::class, 'register']);

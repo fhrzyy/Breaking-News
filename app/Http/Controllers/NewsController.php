@@ -116,4 +116,21 @@ class NewsController extends Controller
         $news->update(['status' => $data['status']]);
         return redirect()->route('news.index')->with('success', 'Status persetujuan berita diperbarui');
     }
+
+    public function show($id)
+{
+    $news = News::where('status', 'approved')->findOrFail($id);
+    return view('news.show', compact('news'));
+}
+
+public function publicIndex(Request $request)
+{
+    $section = $request->query('section', 'latest');
+    $news = News::where('status', 'approved')
+                ->where('section', $section)
+                ->latest() // Gunakan latest() untuk semua section
+                ->paginate(12);
+    return view('news.publicIndex', compact('news', 'section'));
+}
+
 }
