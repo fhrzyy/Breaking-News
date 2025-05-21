@@ -347,17 +347,17 @@
             <!-- Guru 1 -->
             <div class="card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex-shrink-0 w-80 snap-center">
                 <div class="relative pb-[130%]">
-                    <img src="https://i.guim.co.uk/img/media/59baecefbc73d3bcf4a47b017453a27f19b55175/331_488_2481_1489/master/2481.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=285e4f639f1c71cbdf27c57315394bb1" alt="Foto Guru" class="absolute w-full h-full object-cover">
+                    <img src="{{ asset('img/evi.jpg') }}" alt="Foto Guru" class="absolute w-full h-full object-cover">
                 </div>
                 <div class="p-5">
-                    <h3 class="font-bold text-xl text-gray-800 mb-1">Budi Santoso, M.Pd</h3>
-                    <p class="text-blue-600 font-medium mb-2">Matematika</p>
+                    <h3 class="font-bold text-xl text-gray-800 mb-1">Evi Silviana, S.Pd. M.M</h3>
+                    <p class="text-blue-600 font-medium mb-2">Kepala SMKN 6 Jember
                     <p class="text-gray-600 text-sm mb-3">10 tahun pengalaman mengajar, lulusan Universitas Indonesia</p>
                     <div class="flex items-center text-sm text-gray-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        <span>budi.santoso@sixma.edu</span>
+                        <span>futiha.qudrotin@gmail.com
                     </div>
                 </div>
             </div>
@@ -365,17 +365,17 @@
             <!-- Guru 2 -->
             <div class="card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex-shrink-0 w-80 snap-center">
                 <div class="relative pb-[130%]">
-                    <img src="https://t3.ftcdn.net/jpg/02/65/18/30/360_F_265183061_NkulfPZgRxbNg3rvYSNGGwi0iD7qbmOp.jpg" alt="Foto Guru" class="absolute w-full h-full object-cover">
+                    <img src="{{ asset('img/rian.jpg') }}" alt="Foto Guru" class="absolute w-full h-full object-cover">
                 </div>
                 <div class="p-5">
-                    <h3 class="font-bold text-xl text-gray-800 mb-1">Siti Aminah, S.Pd</h3>
-                    <p class="text-blue-600 font-medium mb-2">Bahasa Indonesia</p>
+                    <h3 class="font-bold text-xl text-gray-800 mb-1">Ryan Rizqi Maulana, S.Kom. Gr.</h3>
+                    <p class="text-blue-600 font-medium mb-2">Guru Produktif RPL
                     <p class="text-gray-600 text-sm mb-3">8 tahun pengalaman mengajar, lulusan Universitas Gadjah Mada</p>
                     <div class="flex items-center text-sm text-gray-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        <span>siti.aminah@sixma.edu</span>
+                        <span>ryanrizqi@gmail.com
                     </div>
                 </div>
             </div>
@@ -383,17 +383,17 @@
             <!-- Guru 3 -->
             <div class="card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex-shrink-0 w-80 snap-center">
                 <div class="relative pb-[130%]">
-                    <img src="https://d19r1twe1senfi.cloudfront.net/uploads/avr/image_event_online/image/f1db7a32-d6b5-4579-8065-d62ef4add297/user_crop_Adelaide_Hero_Image.jpg?ts=1730168169" alt="Foto Guru" class="absolute w-full h-full object-cover">
+                    <img src="{{ asset('img/fauzi.jpg') }}" alt="Foto Guru" class="absolute w-full h-full object-cover">
                 </div>
                 <div class="p-5">
-                    <h3 class="font-bold text-xl text-gray-800 mb-1">Ahmad Rizki, M.Sc</h3>
-                    <p class="text-blue-600 font-medium mb-2">Fisika</p>
+                    <h3 class="font-bold text-xl text-gray-800 mb-1">Fauzi Martha Lisdyandana, S.Pd.</h3>
+                    <p class="text-blue-600 font-medium mb-2">Guru Seni Budaya
                     <p class="text-gray-600 text-sm mb-3">5 tahun pengalaman mengajar, lulusan Institut Teknologi Bandung</p>
                     <div class="flex items-center text-sm text-gray-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        <span>ahmad.rizki@sixma.edu</span>
+                        <span>fauzi_martha@gmail.com
                     </div>
                 </div>
             </div>
@@ -401,17 +401,17 @@
             <!-- Guru 4 -->
             <div class="card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex-shrink-0 w-80 snap-center">
                 <div class="relative pb-[130%]">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0976ln5ihSXouHbCOAZ_ZAqVDY90rtYKVig&s" alt="Foto Guru" class="absolute w-full h-full object-cover">
+                    <img src="{{ asset('img/hasan.jpg') }}" alt="Foto Guru" class="absolute w-full h-full object-cover">
                 </div>
                 <div class="p-5">
-                    <h3 class="font-bold text-xl text-gray-800 mb-1">Dewi Anggraini, S.Pd</h3>
-                    <p class="text-blue-600 font-medium mb-2">Biologi</p>
+                    <h3 class="font-bold text-xl text-gray-800 mb-1">Isnaini Hasan Asy'ari, S.Pd.</h3>
+                    <p class="text-blue-600 font-medium mb-2">Guru  Produktif DKV
                     <p class="text-gray-600 text-sm mb-3">7 tahun pengalaman mengajar, lulusan Universitas Airlangga</p>
                     <div class="flex items-center text-sm text-gray-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        <span>dewi.anggraini@sixma.edu</span>
+                        <span>hasanisnaini@gmail.com
                     </div>
                 </div>
             </div>
@@ -419,17 +419,17 @@
             <!-- Guru 5 -->
             <div class="card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex-shrink-0 w-80 snap-center">
                 <div class="relative pb-[130%]">
-                    <img src="https://media.newyorker.com/photos/66d2358f1f531aabeb7b00d4/1:1/w_2000,h_2000,c_limit/Kang-English-Teacher-02_GALLERY_EVAN_0028.jpg" alt="Foto Guru" class="absolute w-full h-full object-cover">
+                    <img src="{{ asset('img/safaat.jpg') }}" alt="Foto Guru" class="absolute w-full h-full object-cover">
                 </div>
                 <div class="p-5">
-                    <h3 class="font-bold text-xl text-gray-800 mb-1">Andi Wijaya, M.Pd</h3>
-                    <p class="text-blue-600 font-medium mb-2">Kimia</p>
+                    <h3 class="font-bold text-xl text-gray-800 mb-1">Muhammad Shahibusy Syafaat El-Salimiy, S.Pd.</h3>
+                    <p class="text-blue-600 font-medium mb-2">Guru Bahasa Arab
                     <p class="text-gray-600 text-sm mb-3">9 tahun pengalaman mengajar, lulusan Universitas Padjadjaran</p>
                     <div class="flex items-center text-sm text-gray-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        <span>andi.wijaya@sixma.edu</span>
+                        <span>syafaat122@gmail.com
                     </div>
                 </div>
             </div>
@@ -437,17 +437,17 @@
             <!-- Guru 6 -->
             <div class="card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex-shrink-0 w-80 snap-center">
                 <div class="relative pb-[130%]">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmeEGMG-mmNvjejHnOJIwgDl3A0aPhkXY0Jg&s" alt="Foto Guru" class="absolute w-full h-full object-cover">
+                    <img src="{{ asset('img/shafwur.jpg') }}" alt="Foto Guru" class="absolute w-full h-full object-cover">
                 </div>
                 <div class="p-5">
-                    <h3 class="font-bold text-xl text-gray-800 mb-1">Nurul Hidayah, S.Pd</h3>
-                    <p class="text-blue-600 font-medium mb-2">Bahasa Inggris</p>
+                    <h3 class="font-bold text-xl text-gray-800 mb-1">Ahmad Shafwur R, S.Pd., M.Pd.</h3>
+                    <p class="text-blue-600 font-medium mb-2">Guru Agama Islam
                     <p class="text-gray-600 text-sm mb-3">6 tahun pengalaman mengajar, lulusan Universitas Brawijaya</p>
                     <div class="flex items-center text-sm text-gray-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        <span>nurul.hidayah@sixma.edu</span>
+                        <span>shafwur8222@gmail.com
                     </div>
                 </div>
             </div>
@@ -455,17 +455,17 @@
             <!-- Guru 7 -->
             <div class="card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex-shrink-0 w-80 snap-center">
                 <div class="relative pb-[130%]">
-                    <img src="https://lh6.googleusercontent.com/proxy/dKxGEA5aaDzFZhxupnfySK7sdYIIdQ-15SOyXsOhWN6ApviU64U2sWwnMHjbwatgGLkARtT-XnADUYlZ43DsS6pfbUG8nY6sUOfD9MYCCRiOgOTSJcoclu79pW4Yfonu-1PLLuCfrQ" alt="Foto Guru" class="absolute w-full h-full object-cover">
+                    <img src="{{ asset('img/ulum.jpg') }}" alt="Foto Guru" class="absolute w-full h-full object-cover">
                 </div>
                 <div class="p-5">
-                    <h3 class="font-bold text-xl text-gray-800 mb-1">Hadi Prasetyo, M.Ed</h3>
-                    <p class="text-blue-600 font-medium mb-2">Sejarah</p>
+                    <h3 class="font-bold text-xl text-gray-800 mb-1">Misbahul Ulum, S.Pd.</h3>
+                    <p class="text-blue-600 font-medium mb-2">Guru Bimbingan Konseling
                     <p class="text-gray-600 text-sm mb-3">11 tahun pengalaman mengajar, lulusan Universitas Sebelas Maret</p>
                     <div class="flex items-center text-sm text-gray-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        <span>hadi.prasetyo@sixma.edu</span>
+                        <span>ulum.misbahul11@gmail.com
                     </div>
                 </div>
             </div>
@@ -473,17 +473,17 @@
             <!-- Guru 8 -->
             <div class="card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex-shrink-0 w-80 snap-center">
                 <div class="relative pb-[130%]">
-                    <img src="https://www.vivi.io/wp-content/uploads/2024/12/AdobeStock_608709985.jpeg" alt="Foto Guru" class="absolute w-full h-full object-cover">
+                    <img src="{{ asset('img/futiha.jpg') }}" alt="Foto Guru" class="absolute w-full h-full object-cover">
                 </div>
                 <div class="p-5">
-                    <h3 class="font-bold text-xl text-gray-800 mb-1">Maya Sari, S.Pd</h3>
-                    <p class="text-blue-600 font-medium mb-2">Ekonomi</p>
-                    <p class="text-gray-600 text-sm mb-3">4 tahun pengalaman mengajar, lulusan Universitas Diponegoro</p>
+                    <h3 class="font-bold text-xl text-gray-800 mb-1">Futiha Qudrotin., S.Pd</h3>
+                    <p class="text-blue-600 font-medium mb-2">Bahasa Indonesia
+                    <p class="text-gray-600 text-sm mb-3">10 tahun pengalaman mengajar, lulusan Universitas Indonesia</p>
                     <div class="flex items-center text-sm text-gray-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        <span>maya.sari@sixma.edu</span>
+                        <span>futiha.qudrotin@gmail.com
                     </div>
                 </div>
             </div>
