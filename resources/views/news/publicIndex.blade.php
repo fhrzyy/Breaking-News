@@ -51,8 +51,17 @@
                         <p class="text-gray-700 mb-4">{{ $item->excerpt ?? Str::limit($item->content, 200) }}</p>
                     </div>
                 </div>
-                
-                
+                <!-- Tombol Komentar -->
+                <div class="mt-4">
+                    <button onclick="toggleCommentForm({{ $item->id }}, '{{ $item->title }}')" class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700">Komentar</button>
+                    <!-- Form Komentar (Awalnya Tersembunyi) -->
+                    <div id="comment-form-{{ $item->id }}" class="hidden mt-4">
+                        <input type="text" id="name-{{ $item->id }}" placeholder="Nama" class="w-full p-2 mb-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
+                        <input type="text" id="class-{{ $item->id }}" placeholder="Kelas" class="w-full p-2 mb-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
+                        <textarea id="comment-{{ $item->id }}" placeholder="Tulis komentar..." class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"></textarea>
+                        <button onclick="addComment({{ $item->id }}, '{{ $item->title }}')" class="mt-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700">Kirim Komentar</button>
+                    </div>
+                </div>
             </article>
         @empty
             <div class="py-12 text-center">
@@ -69,6 +78,105 @@
                 {{ $news->links() }}
             </div>
         @endif
+
+        <!-- Tempat Menampilkan Semua Komentar -->
+        <div id="all-comments" class="mt-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Komentar Pengunjung</h3>
+            <div id="comments-list" class="space-y-3"></div>
+        </div>
     </div>
+
+    <!-- JavaScript untuk Menangani Komentar -->
+    <script>
+        // Load komentar dari localStorage saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', loadComments);
+
+        // Fungsi untuk toggle form komentar
+        function toggleCommentForm(newsId, newsTitle) {
+            const form = document.getElementById(`comment-form-${newsId}`);
+            form.classList.toggle('hidden');
+        }
+
+        // Fungsi untuk menambahkan komentar
+        function addComment(newsId, newsTitle) {
+            const name = document.getElementById(`name-${newsId}`).value;
+            const kelas = document.getElementById(`class-${newsId}`).value;
+            const comment = document.getElementById(`comment-${newsId}`).value;
+
+            if (!name || !kelas || !comment) {
+                alert("Harap isi semua field (Nama, Kelas, dan Komentar)!");
+                return;
+            }
+
+            // Buat elemen komentar baru
+            const commentDiv = document.createElement('div');
+            commentDiv.classList.add('p-3', 'bg-gray-100', 'rounded-lg', 'relative');
+            commentDiv.innerHTML = `
+                <p><strong class="font-bold">Mengomentari Berita:</strong> <span class="text-gray-600">${newsTitle}</span></p>
+                <p><strong class="font-bold">Nama:</strong> <span class="text-gray-600">${name}</span></p>
+                <p><strong class="font-bold">Kelas:</strong> <span class="text-gray-600">${kelas}</span></p>
+                <p class="text-gray-600">${comment}</p>
+                <button onclick="deleteComment(this, '${newsTitle}', '${name}', '${kelas}', '${comment}')" class="absolute top-2 right-2 px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600">Hapus</button>
+            `;
+
+            // Tambahkan komentar ke daftar komentar global
+            const commentsList = document.getElementById('comments-list');
+            commentsList.appendChild(commentDiv);
+
+            // Simpan komentar ke localStorage
+            saveComment({ newsTitle, name, kelas, comment });
+
+            // Kosongkan form dan sembunyikan
+            document.getElementById(`name-${newsId}`).value = '';
+            document.getElementById(`class-${newsId}`).value = '';
+            document.getElementById(`comment-${newsId}`).value = '';
+            document.getElementById(`comment-form-${newsId}`).classList.add('hidden');
+        }
+
+        // Fungsi untuk menghapus komentar
+        function deleteComment(button, newsTitle, name, kelas, commentText) {
+            const commentDiv = button.parentElement;
+            const commentsList = document.getElementById('comments-list');
+            commentsList.removeChild(commentDiv);
+
+            // Perbarui localStorage dengan menghapus komentar yang sesuai
+            let comments = JSON.parse(localStorage.getItem('comments') || '[]');
+            const index = comments.findIndex(c => 
+                c.newsTitle === newsTitle && 
+                c.name === name && 
+                c.kelas === kelas && 
+                c.comment === commentText
+            );
+            if (index > -1) {
+                comments.splice(index, 1);
+                localStorage.setItem('comments', JSON.stringify(comments));
+            }
+        }
+
+        // Fungsi untuk menyimpan komentar ke localStorage
+        function saveComment(comment) {
+            let comments = JSON.parse(localStorage.getItem('comments') || '[]');
+            comments.push(comment);
+            localStorage.setItem('comments', JSON.stringify(comments));
+        }
+
+        // Fungsi untuk memuat komentar dari localStorage
+        function loadComments() {
+            let comments = JSON.parse(localStorage.getItem('comments') || '[]');
+            const commentsList = document.getElementById('comments-list');
+            comments.forEach(comment => {
+                const commentDiv = document.createElement('div');
+                commentDiv.classList.add('p-3', 'bg-gray-100', 'rounded-lg', 'relative');
+                commentDiv.innerHTML = `
+                    <p><strong class="font-bold">Berita:</strong> <span class="text-gray-600">${comment.newsTitle}</span></p>
+                    <p><strong class="font-bold">Nama:</strong> <span class="text-gray-600">${comment.name}</span></p>
+                    <p><strong class="font-bold">Kelas:</strong> <span class="text-gray-600">${comment.kelas}</span></p>
+                    <p class="text-gray-600">${comment.comment}</p>
+                    <button onclick="deleteComment(this, '${comment.newsTitle}', '${comment.name}', '${comment.kelas}', '${comment.comment}')" class="absolute top-2 right-2 px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600">Hapus</button>
+                `;
+                commentsList.appendChild(commentDiv);
+            });
+        }
+    </script>
 </body>
 </html>
